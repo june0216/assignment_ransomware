@@ -1,4 +1,4 @@
-# study_Attack
+# assignment_ransomware
 먼저, 과제2의 전반적인 수행 과정 및 결과를 살펴보고 이후 랜섬웨어코드에 대해서 구체적으로 살펴볼 것이다. 
 
 먼저, 과제2를 수행하기 위한 과정은 다음과 같다. 
@@ -50,15 +50,11 @@
 
 **[처음 victim 폴더]**
 
-![실행전피해자파일.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f274593a-6b54-4f80-a94d-ea4d2e432805/%EC%8B%A4%ED%96%89%EC%A0%84%ED%94%BC%ED%95%B4%EC%9E%90%ED%8C%8C%EC%9D%BC.png)
 
 **[처음 attacker의 폴더]**
 
-![key-recovery위치.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/68d1eeb1-69ab-4d85-9313-fd75fc8abf2a/key-recovery%EC%9C%84%EC%B9%98.png)
 
 - **랜섬웨어 전체 동작**
-
-![공격과정.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e4f75234-6eb3-4391-9caa-7f092f2df267/%EA%B3%B5%EA%B2%A9%EA%B3%BC%EC%A0%95.png)
 
 이제 명령어 별로 자세히 동작 과정을 살펴볼 수 있다. 
 
@@ -77,11 +73,11 @@ python3 ransom.py
 
 **[결과 : 이를 수행한 후 victim 폴더]**
 
-![랜섬웨어감염된피해자파일.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f4f88a9a-92c3-4f18-84a8-4afe6ca98d7d/%EB%9E%9C%EC%84%AC%EC%9B%A8%EC%96%B4%EA%B0%90%EC%97%BC%EB%90%9C%ED%94%BC%ED%95%B4%EC%9E%90%ED%8C%8C%EC%9D%BC.png)
+[랜섬웨어감염된피해자파일.png]
 
 **[결과 : 이를 수행한 후 attacker 폴더]**
 
-![랜섬웨어감염된후공격자파일.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1e0f3004-23cd-4818-b428-f9c59606461e/%EB%9E%9C%EC%84%AC%EC%9B%A8%EC%96%B4%EA%B0%90%EC%97%BC%EB%90%9C%ED%9B%84%EA%B3%B5%EA%B2%A9%EC%9E%90%ED%8C%8C%EC%9D%BC.png)
+[랜섬웨어감염된후공격자파일.png]
 
 (3) key를 복호화하여 key.txt로 저장한다. 
 
@@ -104,11 +100,10 @@ python3 key-recovery.py
 
 **`key.bin`**이 복호화되어 **`key.txt`**가 저장되었다. 
 
-![키리커버리후_공격자파일.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dd6dcde3-9aa5-4ca0-bdf2-b214a7790a05/%ED%82%A4%EB%A6%AC%EC%BB%A4%EB%B2%84%EB%A6%AC%ED%9B%84_%EA%B3%B5%EA%B2%A9%EC%9E%90%ED%8C%8C%EC%9D%BC.png)
+[키 복호화 후_공격자파일.png]
 
 **[결과 : victim 의 폴더 - 변화 없음]**
 
-![키리커버리후_피해자파일.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e4c2518f-c73d-4e6c-8570-dadfb6435c37/%ED%82%A4%EB%A6%AC%EC%BB%A4%EB%B2%84%EB%A6%AC%ED%9B%84_%ED%94%BC%ED%95%B4%EC%9E%90%ED%8C%8C%EC%9D%BC.png)
 
 (4) 복호화된 key를 가지고 피해자의 파일을 복호화한다. 
 
@@ -123,6 +118,5 @@ python3 file-recovery.py
 
 **`.enc 파일`**들이 복호화되어 **`.txt`**로 변환되었고 **`.enc파일`**들은 없어졌다. 
 
-![최종피해자파일.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/37469d4b-d3a5-4a8c-885f-60020d2c2270/%EC%B5%9C%EC%A2%85%ED%94%BC%ED%95%B4%EC%9E%90%ED%8C%8C%EC%9D%BC.png)
 
 **[결과 : attacker 파일 - 변화없음]**
