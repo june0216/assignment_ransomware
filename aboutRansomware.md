@@ -41,7 +41,6 @@ o **CryptoLocker (2013)**
 • wearable devices의 제조사로 자체 데이터 센터에 사용자의 private data (runs and bike rides)를 보유하고 있음..
 
 • 2020 후반, Garmin은 ransomware 공격을 받았고, 이로 인해 제공하는 서비스에 장애를 일으킴.
-([https://techbeacon.com/security/8-lessons-garminransomware-attack](https://techbeacon.com/security/8-lessons-garminransomware-attack)).
 
 • Garmin이 얼마의 랜섬을 지불했는 지 정확히 확인되지는 않았지만 데이터의 복호화 키를 얻기 위해 수십억원을 지불한 것으로 알려짐.
 
@@ -64,8 +63,6 @@ o **CryptoLocker (2013)**
 
 o Hybrid encryption - Diagram
 
-![화면 캡처 2022-11-14 101536.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c5d344fb-ced3-438a-8c75-49904f7f072e/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2022-11-14_101536.png)
-
 랜섬웨어의 동작 원리
 o 랜섬웨어는 공격자 (Attacker) 와 피해자 (Victim) 사이의
 three-round protocol을 통해 수행된다.
@@ -76,8 +73,6 @@ public키를 포함한 malware를 설치하게ㅚ나.
 • Step 1: 공격자는 공개키와 개인키 키 쌍 (pk, sk) 을 생성하고, 공개키
 및 이를 이용한 암호화 프로그램을 Malware에 포함하여 피해자에게
 전달한다.
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c1e0b008-6d8a-4f4b-b191-03d471b854f5/Untitled.png)
 
 Step 2: 공격을 수행하기 위해, Malware는 랜덤하게 대칭키 k를
 생성하고, 피해자의 데이터를 암호화하여 CM을 생성한다. 이후에 대칭키
@@ -93,15 +88,11 @@ Ck를 공격자에게 보내라고 한다. CM은 필요없음 k만 알면 CM을 
 
 파일과 몸값을 보내면 복호화할 수있는 키를 주겠다고 함
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9ceb7250-6dce-42f7-bb3d-9afa80ef66d8/Untitled.png)
-
 - Step 3: 공격자가 ransom을 수령한 경우, 공격자는 Ck 를 자신의
 비밀키 sk로 복호화 하고, 이에 대한 결과물인 대칭키 k를 피해자에게
 보낸다.
     - 피해자는 수령한 대칭키를 이용하여 CM을 k로 복호화 하여
     원본데이터를 복구한다.
-    
-    ![화면 캡처 2022-11-14 102033.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a14aec74-fa8c-4f2b-b62c-e941db8052ec/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2022-11-14_102033.png)
     
     o 동작 원리에 대한 부가 설명:
     • 랜덤하게 생성된 128-bit 대칭키를 이용한 AES 등의 대칭키 암호
